@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='js/jquery-3.6.0.min.js'></script>
+</head>
+
+<body>
+
+    <button id="btn"> Hide</button>
+    <button id="btn1"> Show</button>
+    <button id="btn2"> Toggle</button>
+    <button id="btn3"> slide Toggle</button>
+    <button id="btn4"> fade Toggle</button>
+    <button id="btn5"> animate</button>
+
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi inventore architecto totam et sint delectus,
+        vitae rem velit earum facilis culpa accusamus, voluptatem vel, iste perspiciatis ex nulla? Voluptas, ad.
+    </p>
+
+    <div style="width: 100px;height: 100px; background-color: teal;">
+
+    </div>
+
+    <script>
+        //$('selector').action()
+        //selector themes
+        //by class name , by id name, by tag elements
+
+
+
+
+        $('#btn').click(function () {
+
+
+
+            $('p').hide(3000)
+
+
+        })
+
+        $('#btn1').click(function () {
+
+
+
+            $('p').show(3000)
+
+
+        })
+
+
+        $('#btn2').click(function () {
+
+
+
+            $('p').toggle(5000)
+
+
+        })
+
+
+        $('#btn3').click(function () {
+
+
+
+            $('div').slideToggle(5000)
+
+
+        })
+
+        $('#btn4').click(function () {
+
+
+
+            $('div').fadeToggle(5000)
+
+
+        })
+
+        $('#btn5').click(function () {
+            $('div').animate({
+                opacity: 0.1,
+                height: '150px',
+                width: '350px'
+            },
+                10000)
+
+
+        })
+
+        $('p').on(
+            {
+                click: function () { console.log("thanks for clicking  ") },
+                mouseleave: function () { console.log("thanks for leaving  ") },
+
+            }
+        )
+
+// $('p:first').click;//only for first p tag 
+// $('p.odd').click;//by class name selector
+// $('*').click;//all elements selector
+
+    </script>
+
+</body>
+
+</html>
