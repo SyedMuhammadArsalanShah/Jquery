@@ -6,96 +6,128 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
     <script src='js/jquery-3.6.0.min.js'></script>
 </head>
 
 <body>
 
-    <button id="btn"> Hide</button>
-    <button id="btn1"> Show</button>
-    <button id="btn2"> Toggle</button>
-    <button id="btn3"> slide Toggle</button>
-    <button id="btn4"> fade Toggle</button>
-    <button id="btn5"> animate</button>
-
-
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi inventore architecto totam et sint delectus,
-        vitae rem velit earum facilis culpa accusamus, voluptatem vel, iste perspiciatis ex nulla? Voluptas, ad.
+    <button id="clk">click</button>
+    <button id="dbclk">Double click</button>
+    <button id="hv"> Hover</button>
+    <button id="hid"> Hide</button>
+    <button id="shw"> show</button>
+    <button id="tgl"> Toggle </button>
+    <button id="stgl">slide Toggle </button>
+    <button id="ftgl">fade Toggle </button>
+    <button id="atgl">animate </button>
+    <p class="para">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id nisi molestias incidunt, tempore dolorem suscipit
+        culpa quis vel. Porro quo, quibusdam vero perferendis quas ea dolor at nemo iusto necessitatibus.
     </p>
-
-    <div style="width: 100px;height: 100px; background-color: teal;">
-
+    <div style="width:300px; height: 120px; background-color: teal;">
+        <p id="p" style="color:white ;margin: 20px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id nisi molestias incidunt, tempore dolorem
+            suscipit
+            culpa quis vel. Porro quo, quibusdam vero perferendis quas ea dolor at nemo iusto necessitatibus.
+        </p>
     </div>
-
     <script>
-        //$('selector').action()
-        //selector themes
-        //by class name , by id name, by tag elements
 
+        //syntax
+        /*
+        $('selector').action()
+        //by id
+        //by class name
+        // by element (tag name)
+        
+        */
+        // $('p:first').click;//only for first p tag 
+        // $('p.odd').click;//by class name selector
+        // $('*').click;//all elements selector
 
+        $('#clk').click(function () {
 
+            console.log("you clicked on button ")
 
-        $('#btn').click(function () {
-
-
-
-            $('p').hide(3000)
-
-
-        })
-
-        $('#btn1').click(function () {
-
-
-
-            $('p').show(3000)
 
 
         })
 
 
-        $('#btn2').click(function () {
+        $('#dbclk').dblclick(function () {
+
+            console.log("you double clicked on button ")
 
 
 
-            $('p').toggle(5000)
+        })
+
+        $('#hv').hover(function () {
+
+            console.log("you hover on button ")
+
 
 
         })
 
 
-        $('#btn3').click(function () {
 
 
+        $('#hid').click(function () {
 
-            $('div').slideToggle(5000)
-
-
-        })
-
-        $('#btn4').click(function () {
-
-
-
-            $('div').fadeToggle(5000)
+            // $('.para').hide();
+            $('.para').hide(1500);//3seconds
 
 
         })
 
-        $('#btn5').click(function () {
-            $('div').animate({
-                opacity: 0.1,
-                height: '150px',
-                width: '350px'
-            },
-                10000)
+        $('#shw').click(function () {
+
+            // $('.para').show();
+            $('.para').show(1500);//3seconds
 
 
         })
 
-        $('p').on(
+
+        $('#tgl').click(function () {
+
+            $('.para').toggle(5000);//3seconds
+
+
+        })
+
+        $('#stgl').click(function () {
+
+            $('div').slideToggle(5000);//3seconds
+
+
+        })
+
+
+        $('#ftgl').click(function () {
+
+            $('div').fadeToggle(5000);//3seconds
+
+
+        })
+
+
+
+
+        $('#atgl').click(function () {
+
+            $('div').animate({ opacity: 0.9, width: '500px', }, 10000);//10seconds
+
+
+
+        })
+
+
+
+
+        $('.para').on(
             {
                 click: function () { console.log("thanks for clicking  ") },
                 mouseleave: function () { console.log("thanks for leaving  ") },
@@ -103,12 +135,13 @@
             }
         )
 
-// $('p:first').click;//only for first p tag 
-// $('p.odd').click;//by class name selector
-// $('*').click;//all elements selector
+
+
+
+
+
 
     </script>
-
 </body>
 
 </html>
